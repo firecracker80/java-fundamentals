@@ -6,21 +6,59 @@ package basiclibrary;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
+    @Test
+    void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
     }
-    @Test void roll(){
+
+    @Test
+    void roll() {
         ArrayList<Integer> rolledDie = Library.roll(5);
         assertEquals(5, rolledDie.size());
     }
-    @Test void duplicates(){
-        Set<Boolean> sameNum = Library.duplicates(true);
-        assertTrue(true);
+
+//    @Test
+//    void testContainsDups() {
+//        Library classHasDups = new Library();
+//        int[] noDup = {1, 2, 3};
+//        int[] hasDup = {1, 2, 1};
+//        assertTrue(classHasDups.containsDuplicates(hasDup));
+//        assertFalse(Library.containsDuplicates(noDup));
+//    }
+
+
+//    @Test void testMinMaxTemp() {
+//        int[][] weeklyMonthTemperatures = {
+//                {66, 64, 58, 65, 71, 57, 60},
+//                {57, 65, 65, 70, 72, 65, 51},
+//                {55, 54, 60, 53, 59, 57, 61},
+//                {65, 56, 55, 52, 55, 62, 57}
+//        };
+//        int min = 51;
+//        int max = 72;
+//        Library.analyzeWeatherData(weeklyMonthTemperatures);
+//        assertTrue(true);
+//
+//    }
+    @Test
+    void testVotesTally(){
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        System.out.println(Library.tally(votes));
     }
 }

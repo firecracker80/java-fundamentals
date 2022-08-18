@@ -3,37 +3,85 @@
  */
 package basiclibrary;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Library {
     public boolean someLibraryMethod() {
         return true;
     }
-    public static ArrayList<Integer> roll(int n){
+
+    public static ArrayList<Integer> roll(int n) {
         ArrayList<Integer> rolledDie = new ArrayList<>();
         Random dieRoll = new Random();
         int face;
-        for (int roll = 1; roll <= n; roll++){
+        for (int roll = 1; roll <= n; roll++) {
             face = 1 + dieRoll.nextInt(6);
 
             rolledDie.add(face);
         }
         return rolledDie;
     }
-    public static Set<Boolean> containsDuplicates(int [] rolledDie){
-        Set<Boolean> duplicates = new HashSet<>();
 
-        for(int i = 0; i< rolledDie.length; i++){
-            for(int j = 1; j < rolledDie.length; j++){
-                if (rolledDie[i] == rolledDie[j] && i!=j){
-                    System.out.println("true");
+    public static boolean containsDuplicates(int[] rolledDie) {
+        boolean duplicates = false;
+
+        for (int i = 0; i < rolledDie.length; i++) {
+            for (int j = 1; j < rolledDie.length; j++) {
+                if (rolledDie[i] == rolledDie[j] && i != j) {
+                    duplicates = true;
                 }
             }
         }
         return duplicates;
     }
 
+    public static String analyzeWeatherData(int[][] weeklyMonthTemperatures) {
+        HashSet<Integer> minMaxTemp = new HashSet<>();
+        int min = Collections.min(minMaxTemp);
+        int max = Collections.max(minMaxTemp);
+
+        for (int i = 0; i < weeklyMonthTemperatures.length; i++) {
+            for (int j = 0; j < weeklyMonthTemperatures[i].length; j++) {
+                minMaxTemp.add(weeklyMonthTemperatures[i][j]);
+
+                System.out.println("High" + max + "Low:" + min);
+            }
+        }
+
+        ArrayList<Integer> missingNum = new ArrayList<>();
+        for (int i = min; i < max; i++) {
+            if (!minMaxTemp.contains(i)) {
+                missingNum.add(i);
+            }
+        }
+        return "Never saw temperatures" + missingNum.toString();
+    }
+
+    public static String tally(List<String> votes) {
+        int tally = 0;
+        String won = "";
+
+
+
+        HashMap<String, Integer> winner = new HashMap<String, Integer>();
+        for (String str : votes) {
+            if (winner.keySet().contains(str)) {
+                winner.put(str, winner.get(str) + 1);
+//                System.out.println(votes);
+            } else {
+                winner.put(str, 1);
+            }
+        }
+        for (String entry : winner.keySet()) {
+//            String key = entry.getKey();
+//            Integer value = entry.getValue();
+            if (winner.get(entry) > tally) {
+                tally = winner.get(entry);
+                won = entry;
+//                System.out.println(won + "received the most votes!");
+                //Retrieved from geeksforgeeks.org
+            }
+        }
+        return won + " received the most votes!";
+    }
 }
