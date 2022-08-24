@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Review {
+public class Review extends Commerce{
     String author;
     String restaurantName;
     String body;
