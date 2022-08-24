@@ -1,6 +1,6 @@
 package inheritance;
 
-public class Restaurant {
+public class Restaurant extends Commerce {
 
     private String name;
     private Float stars;
