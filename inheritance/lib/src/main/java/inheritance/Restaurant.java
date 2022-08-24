@@ -4,64 +4,76 @@ public class Restaurant {
 
     private String name;
     private Float stars;
-    private Float price;
+    private String price;
 
-    public Restaurant(String name, Float stars, Float price){
+    public Restaurant(String name, Float stars, String price) {
         this.name = name;
         this.stars = stars;
         this.price = price;
     }
 
 
-    public static String toString(String cuisine) {
-        cuisine = "Latin";
-        return cuisine;
-    };
+    public String toString() {
+        return "This restaurant, " + this.name + ", has " + this.stars + "and is " + this.price;
+    }
 
-//    public static String cuisine(String foodName){
-//        foodName = "";
-//        cuisine("");
-//        return foodName;
-//    }
+    ;
 
+    public static String cuisine(String foodType){
+        foodType = "";
+        cuisine("");
+        return foodType;
+    }
+
+
+    ;
     public static boolean familyFriendly(boolean family) {
         family = true;
-        if(family = true){
-        return true;
-        } else{
-            return false;
-        }
-    };
-    public static boolean bar(boolean drinks){
-        drinks = false;
-        if(true){
+        if (family = true) {
             return true;
-        } else{
+        } else {
             return false;
         }
-    };
-    public static boolean danceFloor(boolean bustAMove){
-        bustAMove = false;
-        if(true){
-            return true;
-        } else{
-            return false;
-        }
-    };
+    }
 
-    public String getName(){
+    ;
+
+    public static boolean bar(boolean drinks) {
+        drinks = false;
+        if (true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    ;
+
+    public static boolean danceFloor(boolean bustAMove) {
+        bustAMove = false;
+        if (true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    ;
+
+    public String getName() {
         return name;
     }
 
-    public Float getStars(){
+    public Float getStars() {
         return stars;
     }
 
-    public Float getPrice(){
+    public String getPrice() {
         return price;
     }
 
-    public static addReview(){
-        Review();
+
+    public void addReview(){
+        Review rating = new Review("", "", "",stars);
     }
 }
