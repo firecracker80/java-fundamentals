@@ -14,7 +14,7 @@ class LibraryTest {
 
     @Test void constructorTest(){
 
-        Restaurant newPlace = new Restaurant("Firecracker Lounge", 4.5f, 15.95f);
+        Restaurant newPlace = new Restaurant("Firecracker Lounge", 4.5f, "$$");
         assertInstanceOf(Restaurant.class, newPlace);
     }
 
@@ -33,12 +33,19 @@ class LibraryTest {
     }
 
     @Test void toStringTest(){
-        Restaurant.toString("Latin");
-        assertEquals("Latin", Restaurant.toString("Latin"), "Latin");
+        String name = "El Coqui";
+        Float stars = 4.5f;
+        String price = "$$";
+        assertEquals("This restaurant, " + name + ", has " + stars + "and is " + price, "This restaurant, " + name + ", has " + stars + "and is " + price);
+    }
+
+    @Test void addReviewTest(){
+        Review msg = new Review("latin lover", "El Coqui", "Great place for a family.", 4f);
+        assertInstanceOf(Restaurant.class, msg);
     }
 
     @Test void reviewConstructor(){
-        Review msg = new Review("Rob Jones", "Food was great!", 4.5f);
+        Review msg = new Review("Rob Jones", "El Coqui", "Food was great!", 4.5f);
         assertInstanceOf(Review.class, msg);
   }
 }

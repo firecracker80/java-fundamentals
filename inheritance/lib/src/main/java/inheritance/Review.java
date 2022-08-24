@@ -2,11 +2,13 @@ package inheritance;
 
 public class Review {
     String author;
+    String restaurantName;
     String body;
     Float stars;
 
-    public Review(String author, String body, Float stars){
+    public Review(String author, String restaurantName, String body, Float stars){
         this.author = author;
+        this.restaurantName = restaurantName;
         this.body = body;
         this.stars = stars;
     }
