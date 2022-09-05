@@ -6,5 +6,6 @@ None was created.
 
 ## Approach & Efficiency
 I began this project doing research on how to roll a virtual die. I found something that helped me write a for loop that would roll the die, push the number rolled into an array list, then roll again. I repeated this process for the weather analyzer and tally. In the tally of votes, instead of using an array list, I used a hashmap. This required assistance from the TA, because I had not realized I would need both a for and while loop, to successfully record the tally.
+
 ## Solution
 I have yet to get the linter to work. I have been trying for the last two days. I got some help, but they weren't able to help get passed the error. The other two app work fine.
